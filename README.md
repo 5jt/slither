@@ -7,13 +7,31 @@ Slither takes some of these projects and translates the solutions from Python in
 
 ![Snake and apple](forbidden-fruit.jpg)
 
-It offers practice examples to study for Pythonistas learning APL, also a showcase of directly equivalent Python and APL programs in which to compare the two languages.
+Slither offers 
+
+-   practice examples to study for Pythonistas learning APL
+-   equivalent Python and APL programs in which to compare the two languages
+
+
+## APL solutions
+
+The APL code can be loaded into a workspace, with its parts nested into namespaces.
+For eaxample, either:
+```apl
+]LINK.Create # /path/to/slither  ⍝ load into the workspace root
+]LINK.Create   /path/to/slither  ⍝ load into #.slither
+```
+
+Certain functions, such as `input`, appear in several solutions. 
+They have been abstracted into the `utilities` folder.
+
+Examples are coded in Dyalog APL Version 20.0.
 
 
 ## Contribute
 
 Exercise caution when comparing APL and Python solutions.
-Many of the originals are written as exercises for beginners and limit their use of Python language features that might yield more of the terseness APL programmers aspire to.
+Many of the originals are written as exercises for beginners and limit their use of advanced Python language features that might yield more of the terseness APL programmers aspire to.
 
 Feel free to contribute a more advanced Python version, but leave the originals exactly as scraped from the Web.
 

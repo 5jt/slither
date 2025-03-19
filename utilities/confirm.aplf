@@ -1,0 +1,13 @@
+ flag←confirm prompt;answer;done
+ :Repeat
+     :Trap 999 ⍝ exit signal
+         answer←⎕C⊃q←input prompt,' '/⍨' '≠⊃⌽prompt
+     :Else ⍝ and propagate it
+         'EXIT'⎕SIGNAL 999
+     :EndTrap
+     :If ~done←answer∊'yn'
+        ⎕←'answer: ',answer
+         ⎕←'Answer yes or no, please!'
+     :EndIf
+ :Until done
+ flag←answer='y'

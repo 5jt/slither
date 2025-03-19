@@ -1,0 +1,3 @@
+ ans←input prompt
+ ans←(≢prompt)↓⍞⊣⍞←prompt
+ 'EXIT'⎕SIGNAL 999/⍨'→'=⊃ans

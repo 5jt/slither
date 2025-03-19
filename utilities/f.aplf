@@ -1,0 +1,17 @@
+ str←{env}f string;∆;b;env;i;odd;parts
+ ⍝ string interpolation
+ ⍝ f'{⍳3} are first three numbers' <=> '1 2 3 are first three numbers'
+ odd←⊃b←'{}'∘.=string
+ :If 1 1≡×+/b ⍝ opening and closing braces
+ :AndIf 0 1≡0 1∩+\-⌿b ⍝ braces match and not nested
+     :If 2≠⎕NC 'env'
+         env←{⍵↓⍨-'.'⍳⍨⌽⍵}2⊃⎕XSI ⍝ calling environment
+     :EndIf
+     ∆←string,⍨'}'/⍨~odd
+     parts←1↓¨∆⊂⍨∆∊'{}'
+     i←⍸(≢parts)⍴odd⌽0 1 ⍝ find parts to evaluate
+     parts[i]←env∘{⍕⍺⍎⍵}¨parts[i]
+     str←∊parts
+ :Else
+     str←string
+ :EndIf

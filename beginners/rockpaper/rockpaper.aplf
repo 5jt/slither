@@ -1,0 +1,33 @@
+ rockpaper;U;scores;yours;mine;play;weapons;choices;uwin;wins;loses;winner
+ ⍝ APL-literate game of Rock, Pper, Scissors
+ U←##.##.utilities
+
+ scores←0 0   ⍝ yours, mine
+ choices←'  ' ⍝ yours, mine
+ weapons←'rps'
+ 'Rock, Paper, Scissors - Shoot!'
+
+ play←1
+ :While play
+     (1⊃choices)←weapons U.pick'Choose your weapon [R]ock, [P]aper, or [S]cissors'
+     (2⊃choices)←weapons⊃⍨?≢weapons
+
+     yours mine←'Rock' 'Paper' 'Scissors'['rps'⍳choices]
+     U.f'You chose: {yours}, I chose: {mine}'
+
+     :If =/choices
+         'It’s a Tie!'
+     :Else
+         uwin←(⊂choices)∊'rs' 'sp' 'pr'
+         winner←(uwin+1)⊃'I' 'you'
+         wins loses←(~uwin)⌽yours mine
+         U.f'{wins} beats {loses}, and {winner} win!'
+         scores+←(~uwin)⌽1 0
+     :EndIf
+
+     U.f'Score - you: {1⊃scores}, me: {2⊃scores}'
+     play←U.confirm'Play again?'
+
+ :EndWhile
+
+ 'Thanks for playing!'

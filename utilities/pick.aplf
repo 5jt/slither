@@ -1,0 +1,9 @@
+ option←options pick prompt;done
+ done←0
+ :Repeat
+     option←⊃ask prompt
+     done←option∊options
+     :If ~done
+         'Please pick one of ',2↓∊', '∘,¨options
+     :EndIf
+ :Until done
