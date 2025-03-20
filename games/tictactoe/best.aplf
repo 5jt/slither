@@ -1,0 +1,20 @@
+ ind←usr best board;s;winnable;good;loseable;c
+⍝ best index for usr to fill
+ ⍝ board - 0: empty; 1: player 1; player 2
+ s←+/10*board[coords]
+ winnable←1+2×10*usr
+ loseable←1+2×10*3-usr
+ good←2+10*usr
+ :If winnable∊s ⍝ take the win
+     c←coords[s⍳winnable;]
+     ind←c⊃⍨board[c]⍳0
+ :ElseIf loseable∊s ⍝ block opponent
+     c←coords[s⍳loseable;]
+     ind←c⊃⍨board[c]⍳0
+ :ElseIf good∊s ⍝ improve position
+     c←coords[s⍳good;]
+   ⍝ FIXME: pick better, not first
+     ind←c⊃⍨board[c]⍳0
+ :Else ⍝ any empty position
+     ind←{⍵⊃⍨?≢⍵}⍸board=0
+ :EndIf
