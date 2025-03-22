@@ -1,0 +1,12 @@
+ boards←auto;board;s
+ ⍝ Play one game of tictactoe (TTY)
+ ⍝ Return sequence of board states
+ boards←,⊂board←3 3⍴' '
+ :Repeat
+     boards,←⊂board←'X'play board      ⍝ player X
+     :If 0=status board
+         boards,←⊂board←'O'play board  ⍝ player O
+     :EndIf
+ :Until 0≠s←status board
+
+ ⎕←'A draw!' 'X won!' 'O won!'⊃⍨¯1 1 2⍳s

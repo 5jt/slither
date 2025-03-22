@@ -1,0 +1,7 @@
+ board←player play board;ind
+ :If lastmove board
+     board←player forced board
+ :Else
+     ind←⎕IO+player best board
+     (ind⌷board)←player
+ :EndIf

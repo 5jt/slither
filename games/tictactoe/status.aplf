@@ -1,13 +1,10 @@
  status←{
      ⍝ state of board ⍵
-     ⍝ 0: game unfinished
-     ⍝ 1: Player 1 won
-     ⍝ 2: Player 2 won
-     ⍝ ¯1: draw
-     ⍝ ¯2: player quit game
-     ⍵≡⍬:¯2
-     s←+/10*⍵[coords]
-     30∊s:1
-     300∊s:2
-     -~0∊⍵
+     ⎕IO←0
+     ⍵≡'quit':¯2       ⍝ player quit
+     i←,' XO'⍳⍵
+     s←+/10*i[coords]
+     30∊s:1            ⍝ Player 1 won
+     300∊s:2           ⍝ Player 2 won
+     -~' '∊⍵           ⍝ unfinished/drawn
  }
