@@ -1,0 +1,23 @@
+ flag←check_play_status;valid_responses;response
+ valid_responses←,¨'yes' 'no' 'y'
+ :While 1
+     :Trap 6 ⍝ VALUE ERROR
+         response←input'Do you wish to play again? (Yes or No): '
+         :If ~(⊂⎕C response)∊valid_responses
+             {⎕SIGNAL ⍵}6 ⍝ VALUE ERROR
+         :EndIf
+
+         :If (⊂⎕C response)∊,¨'yes' 'y'
+             flag←1
+             :Return
+         :Else
+            ⍝ os.system('cls' if os.name == 'nt' else 'clear')
+             'Thanks for playing!'
+             →
+         :EndIf
+     :Else
+        ⍝  except ValueError as err
+        ⍝  print(err)
+         'Yes or No only'
+     :EndTrap
+ :EndWhile
