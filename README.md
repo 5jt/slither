@@ -1,5 +1,5 @@
 # slither
-A movement from Python to APL
+_A movement from Python to APL_
 
 Hackr.io offers a portfolio of Python projects by Robert Johns: [40+ Python Projects + Source Code | Beginner to Advanced](https://hackr.io/blog/python-projects). 
 
@@ -11,6 +11,7 @@ Slither offers
 
 -   practice examples to study for Pythonistas learning APL
 -   equivalent Python and APL programs in which to compare the two languages
+-   insights from porting the code to APL, mapped back to improve the original Python
 
 
 ## APL solutions

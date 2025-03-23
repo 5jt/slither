@@ -1,12 +1,12 @@
 Rock, Paper, Scissors
 =====================
 
-First we paste and adapt the Python function definitions as APL functions, keeping as close to the original Python as we can:
+First we paste and adapt the Python function definitions as APL functions, keeping as close to the [original Python](rockpaper0.py) as we can:
 `check_play_status` and `rockpaper_py`.
 
 The code offers lots of opportunities to improve it. 
 After refactoring in APL, we’ll transfer what we’ve learned back into Python.
-(Perhaps it’s easier to think more clearly in APL?)
+(Can we think more clearly in APL?)
 ```apl
   rockpaper_py;f;user_score;computer_score;play;weapons;user_choice;opp_choice
  ⍝ Game of Rock, Paper, Scissors, hewing close to Python solution
@@ -81,7 +81,7 @@ Instead it exits the program by clearing the execution stack (`→`).
 The While loop in `play_rps_py` is an illusion! 
 It were better written as a Repeat with no test so it were at least clear that the path for ending the program is not visible in `rockpaper_py`. 
 
-Most programs at the top level follow a pattern:
+Most top-level programs follow a pattern:
 
 1.  set up, e.g. define some constants, open files
 1.  do the work
@@ -101,7 +101,7 @@ The If/Else construction suffices for handling a user error.
 
 The two prompts can usefully be merged, with Quit as an extra option, and `check_play_status` simply discarded.
 
-What chnges does array thinking suggest?
+What changes does array thinking suggest?
 
 The two variables `user_choice` and `opp_choice` (why not `computer_choice`?) can become the 2-char string `choices`.
 Now `=/choices` replaces `user_choice == opp_choice` and the sequence of tests for pairs condenses to `uwin←(⊂choices)∊'rs' 'sp' 'pr'`.
@@ -149,7 +149,7 @@ Similarly, variables `user_score` and `computer_score` can become the pair `scor
  'Thanks for playing!'
  ```
 Refactoring the code like this reveals the core logic more clearly.
-Perhaps that helps us write a better version in Python?
+Perhaps that can help us write a better version in Python?
 
 ```python
 import random
@@ -198,3 +198,4 @@ if __name__ == '__main__':
 
 Above, the outer loop manages the replay and keeps the cumulative score.
 Forming the string `f'{yc}{mc}'` condenses the multiple tests.
+Modules `re` and `os` and function `check_play_status` have been removed.
