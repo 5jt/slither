@@ -12,10 +12,11 @@ Slither offers
 -   practice examples to study for Pythonistas learning APL
 -   equivalent Python and APL programs in which to compare the two languages
 -   insights from porting the code to APL, mapped back to improve the original Python
+-   reflections on good coding practices, in Python and APL
 
 
-## APL solutions
-
+APL solutions
+-------------
 The APL code can be loaded into a workspace, with its parts nested into namespaces.
 For eaxample, either:
 ```apl
@@ -29,8 +30,18 @@ They have been abstracted into the `utilities` folder.
 Examples are coded in Dyalog APL Version 20.0.
 
 
-## Contribute
+Contents
+--------
 
+-   [Projects for Beginners](beginners/)
+    -   [Number Guessing](beginners/numguess/)
+    -   [Rock Paper Scissors](beginners/rockpaper/)
+-   [Games](games/)
+    -   [Tac-Tac-Toe](games/tictactoe/)
+
+
+Contribute
+----------
 Exercise caution when comparing APL and Python solutions.
 Many of the originals are written as exercises for beginners and limit their use of advanced Python language features that might yield more of the terseness APL programmers aspire to.
 
