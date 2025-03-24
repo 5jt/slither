@@ -1,7 +1,14 @@
- board←player play board;ind
- :If lastmove board
-     board←player forced board
+ board←play board;player;ind
+ player←whonext board
+ :Select ' '+.=,board
+ :Case 0
+     ind←⍬
+ :Case 1
+     ind←forced board
  :Else
      ind←⎕IO+player best board
+ :EndSelect
+
+ :If ind≢⍬
      (ind⌷board)←player
  :EndIf

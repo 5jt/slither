@@ -1,12 +1,12 @@
- boards←auto;board;s
- ⍝ Play one game of tictactoe (TTY)
+ boards←{silent}auto rc;board;s
+ ⍝ Play one game of tic-tac-toe (TTY) with first X at `rc`
  ⍝ Return sequence of board states
- boards←,⊂board←3 3⍴' '
+ boards←,⊂board←setup rc
  :Repeat
-     boards,←⊂board←'X'play board      ⍝ player X
-     :If 0=status board
-         boards,←⊂board←'O'play board  ⍝ player O
-     :EndIf
+     boards,←⊂board←play board
  :Until 0≠s←status board
 
- ⎕←'A draw!' 'X won!' 'O won!'⊃⍨¯1 1 2⍳s
+ :If 2≠⎕NC'silent'
+ :OrIf ~silent
+     ⎕←'A draw!' 'X won!' 'O won!'⊃⍨¯1 1 2⍳s
+ :EndIf

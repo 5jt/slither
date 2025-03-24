@@ -1,7 +1,1 @@
- forced←{
-     ⍝ Last move for ⍺ on board ⍵ if no choices to make
-     b←,⍵
-⍝    1≠b+.=' ':⍵  ⍝ choices left: not forced
-     i←b⍳' '
-     (⍴⍵)⍴(⍺@i)b
- }
+ forced←{⎕IO+(⍴⍵)⊤⎕IO-⍨' '⍳⍨,⍵}

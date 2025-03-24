@@ -1,27 +1,27 @@
- tictactoe;board;∆;box;ind;str;xxx;s
+ tictactoe;box;board;player;ind;s
  ⍝ Play one game of tictactoe (TTY)
- box←{rule⍪('|',⍵,'|')⍪rule←1⌽'++','-'⍴⍨2⊃⍴⍵}
+ box←{rule⍪('|',⍵,'|')⍪rule←1⌽'++','-'⍴⍨1↓⍴⍵}
  board←3 3⍴' '
  :Repeat
      ⎕←box board
-     str←{⍞←⍵ ⋄ (≢⍵)↓⍞}'Row and column? or (Q to quit) '
-     :If 'q'=⎕C⊃str
-         board←'quit'
-     :ElseIf (1 1≢⊃(xxx ind)←⎕VFI str)
-     :OrIf 0∊ind∊1 2 3
-         ⎕←'Just two digits (1, 2 or 3) please.'
-     :ElseIf ' '≠ind⌷board
-         ⎕←'Sorry, already taken!'
+     player←whonext board
+     :If lastmove board
+         ⎕←'Only one cell left!'
+         ind←forced board
+     :ElseIf player='X'
+         ind←pickmove board ⍝ ⍬ for quit
      :Else
-         (ind⌷board)←'X'            ⍝ You
-         :If 0=status board←'O'forced board
-             ∆←⎕IO+'O'best board
-             (∆⌷board)←'O'          ⍝ Me
-         :EndIf
+         ind←⎕IO+'O'best board
      :EndIf
- :Until 0≠s←status board←'X'forced board
 
- :If s≠¯2
+     :If ind≡⍬
+         board←'quit'
+     :Else
+         (ind⌷board)←player
+     :EndIf
+ :Until 0≠s←status board
+
+ :If s≠¯2 ⍝ quit
      ⎕←box board
  :EndIf
  ⎕←'OK, later.' 'A draw!' 'You won!' 'I won!'⊃⍨¯2 ¯1 1 2⍳s

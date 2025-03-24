@@ -1,0 +1,1 @@
+ playout←{status(play⍣{0≠status ⍺})setup ⍵}

@@ -1,0 +1,15 @@
+ ind←pickmove board;str;done;xxx
+ :Repeat
+     str←input'Row and column? or (Q to quit): '
+     done←0
+     :If 'q'=⎕C⊃str
+         done ind←1 ⍬
+     :ElseIf (1 1≢⊃(xxx ind)←⎕VFI str)
+     :OrIf 0∊ind∊1 2 3
+         ⎕←'Just two digits (1, 2 or 3) please.'
+     :ElseIf ' '≠ind⌷board
+         ⎕←'Sorry, already taken!'
+     :Else
+         done←1
+     :EndIf
+ :Until done
