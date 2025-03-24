@@ -37,7 +37,7 @@ Contents
     -   [Number Guessing](beginners/numguess/)
     -   [Rock Paper Scissors](beginners/rockpaper/)
 -   [Games](games/)
-    -   [Tac-Tac-Toe](games/tictactoe/)
+    -   [Tic-Tac-Toe](games/tictactoe/)
 
 
 Contribute
