@@ -1,4 +1,5 @@
-# slither
+Slither
+=======
 _A movement from Python to APL_
 
 Hackr.io offers a portfolio of Python projects by Robert Johns: [40+ Python Projects + Source Code | Beginner to Advanced](https://hackr.io/blog/python-projects). 
@@ -18,7 +19,7 @@ Slither offers
 APL solutions
 -------------
 The APL code can be loaded into a workspace, with its parts nested into namespaces.
-For eaxample, either:
+For example, either:
 ```apl
 ]LINK.Create # /path/to/slither  ⍝ load into the workspace root
 ]LINK.Create   /path/to/slither  ⍝ load into #.slither
@@ -43,7 +44,7 @@ Contents
 Contribute
 ----------
 Exercise caution when comparing APL and Python solutions.
-Many of the originals are written as exercises for beginners and limit their use of advanced Python language features that might yield more of the terseness APL programmers aspire to.
+Many of the originals are written as exercises for beginners and refrain from Python language features that might yield more of the terseness APL programmers aspire to.
 
 Feel free to contribute a more advanced Python version, but leave the originals exactly as scraped from the Web.
 
