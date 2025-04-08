@@ -1,0 +1,1 @@
+'<!DOCTYPE html>',(⎕UCS 13),'<html lang="en">',(⎕UCS 13),'<head>',(⎕UCS 13),'    <meta charset="UTF-8">',(⎕UCS 13),'    <meta name="viewport" content="width=device-width, initial-scale=1.0">',(⎕UCS 13),'    <title>{title}</title>',(⎕UCS 13),'    <style>{css}</style>',(⎕UCS 13),'</head>',(⎕UCS 13),'<body>{body}</body>',(⎕UCS 13),'</html>',(⎕UCS 13)

@@ -1,0 +1,7 @@
+ playout←{
+    ⍝ Play out a game to completion from start at ⍵
+     stat←##.dsl.status
+     board←3 3⍴' '
+     (⍵⌷board)←'X'
+     stat(play⍣{0≠stat ⍺})board
+ }

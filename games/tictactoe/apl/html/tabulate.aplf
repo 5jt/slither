@@ -1,0 +1,6 @@
+ tabulate←{
+     e←#.utilities.enc
+     links←{'a' 'href'(⍕10⊥⍵)}¨⍳⍴⍵
+     cells←links{⍵=' ':⍺ e'&nbsp;' ⋄ ⍵}¨⍵
+     'table'e∊'tr'∘e¨(⊂∊)⍤1⊢'td'∘e¨cells
+ }

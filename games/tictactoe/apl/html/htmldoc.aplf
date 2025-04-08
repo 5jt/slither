@@ -1,0 +1,5 @@
+ htmldoc←{
+     title body←⍺ ⍵
+     css←tictactoe_css
+     ⎕THIS #.utilities.f htmlpage
+ }

@@ -1,0 +1,46 @@
+ r←TttHtml args;root;board;size;coord;page;ind;cells;title
+ ;obj;evt;op;int;sc;st;mime;url;hdr;data;meth
+⍝ Host a game of tic-tac-toe (GUI, HTML Renderer)
+⍝ X has first move
+
+⍝ If you set the root to something other than http://dyalog_root/
+⍝ then you need to use InterceptedURLs to indicate APL is to handle the request
+ root←'http://dyalog_root/' ⍝ set the root
+
+ :If 0∊⍴args ⍝ Set up
+
+     #.ttt←⎕NS''
+     #.ttt.board←3 3⍴' '
+
+     evt←'Event' 'HTTPRequest' 'TttHtml'
+     url←'URL'(root,'main')
+     size←'Size'(150 300)
+     coord←'Coord' 'ScaledPixel'
+     'hr'⎕WC'HTMLRenderer'url evt size coord
+     'All set up'
+
+ :Else ⍝ Handle the HTTPRequest event
+
+     (obj evt op int sc st mime url hdr data meth)←11↑args
+
+     page←(≢root)↓url
+     :If (⊂page)∊⍕¨10⊥¨⍳⍴#.ttt.board
+         ind←10 10⊤⍎page
+         (ind⌷#.ttt.board)←##.dsl.whonext #.ttt.board
+     :EndIf
+
+     :Select s←##.dsl.status #.ttt.board
+     :Case ¯2 ⍝ quit
+     :Case ¯1 ⍝ last move
+     :Case 0 ⍝ open
+     :CaseList 1 2 ⍝ won
+     :EndSelect
+    ⍝ game state...?
+     title←'Tic Tac Toe: ',(##.dsl.whonext #.ttt.board),' to move'
+     data←title htmldoc tabulate #.ttt.board
+     mime←'text/html'
+     (sc st)←200 'OK'
+     int←1 ⍝ intercepted and handled
+     r←obj evt op int sc st mime url hdr data
+
+ :EndIf

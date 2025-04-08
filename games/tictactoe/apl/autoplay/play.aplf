@@ -1,0 +1,16 @@
+ board←play board;dsl;player;ind
+ ⍝ Make the next move on board
+ dsl←##.dsl
+ player←dsl.whonext board
+ :Select ' '+.=,board
+ :Case 0
+     ind←⍬
+ :Case 1
+     ind←dsl.forced board
+ :Else
+     ind←⎕IO+player dsl.best board
+ :EndSelect
+
+ :If ind≢⍬
+     (ind⌷board)←player
+ :EndIf

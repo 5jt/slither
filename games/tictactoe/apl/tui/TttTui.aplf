@@ -1,17 +1,18 @@
- tictactoe;box;board;player;ind;s
- ⍝ Play one game of tictactoe (TTY)
+ TttTui;dsl;box;board;player;ind;s
+ ⍝ Play one game of tictactoe (TUI)
+ dsl←##.dsl
  box←{rule⍪('|',⍵,'|')⍪rule←1⌽'++','-'⍴⍨1↓⍴⍵}
  board←3 3⍴' '
  :Repeat
      ⎕←box board
-     player←whonext board
-     :If lastmove board
+     player←dsl.whonext board
+     :If dsl.lastmove board
          ⎕←'Only one cell left!'
-         ind←forced board
+         ind←dsl.forced board
      :ElseIf player='X'
          ind←pickmove board ⍝ ⍬ for quit
      :Else
-         ind←⎕IO+'O'best board
+         ind←⎕IO+'O'dsl.best board
      :EndIf
 
      :If ind≡⍬
@@ -19,7 +20,7 @@
      :Else
          (ind⌷board)←player
      :EndIf
- :Until 0≠s←status board
+ :Until 0≠s←dsl.status board
 
  :If s≠¯2 ⍝ quit
      ⎕←box board

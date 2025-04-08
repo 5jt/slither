@@ -1,0 +1,1 @@
+'/* CSS for game of Tic Tac Toe */',(⎕UCS 13),'body {',(⎕UCS 13),'    background-color: #fee;',(⎕UCS 13),'}',(⎕UCS 13),'td {',(⎕UCS 13),'    border: 2px solid gray;',(⎕UCS 13),'    color: maroon;',(⎕UCS 13),'    font-size: 24px;',(⎕UCS 13),'    font-weight: bold;',(⎕UCS 13),'    padding: 1em;',(⎕UCS 13),'}'
