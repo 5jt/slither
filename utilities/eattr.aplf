@@ -1,0 +1,8 @@
+ eattr←{
+    ⍝ 'a' 'class' 'foo bar' 'href' 'path/to/abc.html'
+    ⍝ => 'a class="foo bar" href="path/to/abc.html"' 'a'
+    ⍝  'LENGTH ERROR'⎕SIGNAL 5/⍨~2|≢⍵
+     elm←⊃⊃(xxx atts)←⍵⊂⍨1 1↑⍨≢⍵
+     bgn←elm,' ',' 'join{⊂'='join ⍵}⍤1{⍵⍴⍨⌽2,2÷⍨≢⍵}{i←2×⍳2÷⍨≢⍵ ⋄ qt¨@i⊢⍵}atts
+     bgn elm
+ }

@@ -1,0 +1,5 @@
+ enc←{
+     (bgn end)←{80=⎕DR ⍵:⍵ ⍵ ⋄ eattr ⍵}⍺
+     content←{⍵∧.=' ':'' ⋄ ⍵}⍵
+     '<',bgn,'>',content,'</',end,'>'
+ }
