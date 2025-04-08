@@ -39,6 +39,8 @@ Contents
     -   [Rock Paper Scissors](beginners/rockpaper/)
 -   [Games](games/)
     -   [Tic-Tac-Toe](games/tictactoe/)
+-   [Puzzles](puzzles/)
+    -   [The Trilogic Game](puzzles/hanoi/)
 
 
 Contribute
