@@ -1,0 +1,9 @@
+ play←{
+    ⍝ apply succesive moves ⍵ to board ⍺
+    ⍝ return board states
+     2=≡⍺:(,⊂⍺)∇ ⍵               ⍝ start
+     0=≢⍵:⍺                      ⍝ end
+     next←⊃⍵
+     latest←⍺⊃⍨≢⍺
+     (⍺,⊂latest move next)∇ 1↓⍵
+ }

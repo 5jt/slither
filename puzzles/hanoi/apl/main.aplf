@@ -1,0 +1,28 @@
+ main;display;quit;height;moves;board;game;imgs;valid
+⍝ solve Towers of Hanoi
+ (quit height)←askn'Height of tower'
+ :If ~quit
+     (quit display)←confirm'Display disks?' 'Yes, disks; or no, numbers, or → to quit'
+     :If ~quit
+
+         moves←1 2 shift height
+         ⎕←'Solved in ',(⍕≢moves),' moves'
+
+         board←⍳¨height 0 0
+         game←↑board play moves
+
+         valid←game≡{⍵[⍋⍵]}¨game
+         ⎕←⊃valid⌽(
+             'Some moves were invalid.'
+             'All moves were valid.'
+         )
+
+         :If ~display
+             ⎕←game
+         :Else
+             imgs←disks height
+             ⎕←imgs∘tower¨game
+         :EndIf
+
+     :EndIf
+ :EndIf

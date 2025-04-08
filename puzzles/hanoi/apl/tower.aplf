@@ -1,0 +1,4 @@
+ tower←{
+    ⍝ image of disks ⍵
+     (' '⍪⍺)[1+⍵↑⍨-≢⍺;]
+ }

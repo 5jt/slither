@@ -1,0 +1,5 @@
+ disks←{
+    ⍝ images for ⍵ disks
+     i←⍳⍵
+     ↑(⌽p),(⍕⍪i),p←↑⍵↑¨i⍴¨'-'
+ }

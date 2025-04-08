@@ -1,0 +1,8 @@
+ shift←{
+    ⍝ moves to shift ⍵ disks from tower ⍺[1] to ⍺[2]
+     (s t)←⍺                        ⍝ source, target
+     ⍵=1:,⊂s t                      ⍝ shift 1 ring
+     o←⊃s t~⍨⍳3                      ⍝ other
+    ⍝ shift n-1; shift 1; shift n-1
+     (s o ∇ ⍵-1),(⊂s t),o t ∇ ⍵-1
+ }

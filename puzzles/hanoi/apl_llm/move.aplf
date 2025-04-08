@@ -1,0 +1,12 @@
+ move(n source target auxiliary towers)
+ :If n=1
+     disk←(⊣⊃⍨≢)towers⍎source
+     ⍎f'towers.{source}←¯1↓towers.{source}'
+     ⍎f'towers.{target},←{disk}'
+     f'Move disk {disk} from {source} to {target}'
+ :Else
+     print_towers towers
+     move(n-1)source auxiliary target towers
+     move 1 source target auxiliary towers
+     move(n-1)auxiliary target source towers
+ :EndIf

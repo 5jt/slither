@@ -1,0 +1,17 @@
+ (quit flag)←confirm(primary secondary);ans;again;done
+ (again done flag)←0 0 ⍬
+ :Repeat
+     :If again
+         ⎕←secondary
+     :EndIf
+     (quit ans)←input primary
+     :If quit
+         done←1
+     :Else
+         :If done←(⎕C ans)∊'y' 'yes' 'n' 'no'
+             flag←'y'=⊃⎕C ans
+         :Else
+             again←1
+         :EndIf
+     :EndIf
+ :Until done

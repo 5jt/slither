@@ -1,0 +1,16 @@
+ (quit integer)←askn prompt;done;again;ans;vfi
+ (again done integer)←0 0 ⍬
+ :Repeat
+     :If again
+         ⎕←'Enter a single integer'
+     :EndIf
+     (quit ans)←input prompt,': '
+     again←1
+     :If quit
+         done←1
+     :Else
+         vfi←⎕VFI ans
+         done←(,1)≡⊃vfi
+         integer←⊃⊃//vfi
+     :EndIf
+ :Until done

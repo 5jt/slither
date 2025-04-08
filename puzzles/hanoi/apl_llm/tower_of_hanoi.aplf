@@ -1,0 +1,9 @@
+ tower_of_hanoi n;towers
+⍝ Initialize towers
+ towers←(A:⌽⍳n ⋄ B:⍬ ⋄ C:⍬) ⍝ Start with all disks on tower A
+
+ 'Initial Towers State:'
+ print_towers towers
+
+⍝ Start the recursive process
+ move n'A' 'C' 'B'towers

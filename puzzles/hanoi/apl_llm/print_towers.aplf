@@ -1,0 +1,6 @@
+ print_towers towers;name
+ 'Current Towers State:'
+ :For name :In 'ABC'
+     f'name: {towers⍎name}'
+ :EndFor
+ 30⍴'-'
