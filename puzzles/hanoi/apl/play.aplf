@@ -1,5 +1,5 @@
  play←{
-    ⍝ apply succesive moves ⍵ to board ⍺
+    ⍝ apply successive moves ⍵ to board ⍺
     ⍝ return board states
      2=≡⍺:(,⊂⍺)∇ ⍵               ⍝ start
      0=≢⍵:⍺                      ⍝ end

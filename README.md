@@ -4,7 +4,7 @@ _A movement from Python to APL_
 
 Hackr.io offers a portfolio of Python projects by Robert Johns: [40+ Python Projects + Source Code | Beginner to Advanced](https://hackr.io/blog/python-projects). 
 
-Slither takes some of these projects and translates the solutions from Python into APL, first minimally, keeping the APL code close to to the Python, then in ‘APL-literate’ form, demonstrating a more array-oriented solution. 
+Slither takes some of these and other projects and translates the solutions from Python into APL, first minimally, keeping the APL code close to to the Python, then in ‘APL-literate’ form, demonstrating a more array-oriented solution. 
 
 ![Snake and apple](forbidden-fruit.jpg)
 

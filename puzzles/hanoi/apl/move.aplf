@@ -1,7 +1,7 @@
  move←{
     ⍝ in ⍺ move top disk from ⍵[1] to ⍵[2]
-     (a b)←⍵            ⍝ source, target
-     td←⊃a⊃⍺            ⍝ top disk
-     (f t)←↓(a b)∘.=⍳3  ⍝ from each, to each
-     (t⍴¨⊂td),¨f↓¨⍺
+     (s t)←⍵              ⍝ source, target
+     td←⊃s⊃⍺              ⍝ top disk
+     (fe te)←↓(s t)∘.=⍳3  ⍝ from each, to each
+     (te⍴¨⊂td),¨fe↓¨⍺
  }
