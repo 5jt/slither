@@ -278,6 +278,11 @@ Show each tower not as a list of integers, but as a stack of numbered disks, see
 With this matrix of images of disks, we can depict any tower.
 
 ```apl
+ tower←{
+    ⍝ image of disks ⍵
+     (' '⍪⍺)[1+⍵↑⍨-≢⍺;]
+ }
+
       ⊂imgs tower 1 3 4
 ┌───────────┐
 │           │
